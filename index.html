@@ -15,7 +15,13 @@
     </head>
     <body>
       <h1>MyDrugs</h1>
+
       <br>
+
+      <div id="message-display"></div>
+
+      <br>
+
       <form id="sign-up">
       <div class="container-auth">
         <h3>Sign Up</h3>
@@ -25,9 +31,6 @@
         <input type="Submit" class="btn btn-outline-secondary" value="REGISTER" />
       </div>
       </form>
-      <br>
-
-      <div id="message-display"></div>
 
       <br>
       <form id="sign-in">
@@ -64,18 +67,22 @@
       <br>
 
       <form id="My-Prescriptions">
+      <h3>My Prescriptions</h3>
       <div class="btn-group btn-group-toggle" data-toggle="buttons" >
         <label class="btn btn-outline-secondary active">
-          <input type="radio" name="options" id="add-prescription" />Add A New Prescription
+          <input type="radio" name="options" id="create-prescription" />Add A New Prescription
         </label>
         <label class="btn btn-outline-secondary">
-          <input type="radio" name="options" id="update-prescription" /> View Prescriptions
+          <input type="radio" name="options" id="view-prescription" /> View Prescriptions
         </label>
         <label class="btn btn-outline-secondary">
           <input type="radio" name="options" id="find-prescription" /> Find A Prescription
         </label>
         <label class="btn btn-outline-secondary">
-          <input type="radio" name="options" id="dele-prescription" /> Delete A Prescription
+          <input type="radio" name="options" id="update-prescription" /> Update A Prescription
+        </label>
+        <label class="btn btn-outline-secondary">
+          <input type="radio" name="options" id="delete-prescription" /> Delete A Prescription
         </label>
       </div>
       </form>
