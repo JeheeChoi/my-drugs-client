@@ -1,1 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #E2D5D5;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  color: #817171;
+}
+
+h1 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: black;
+}
+
+.btn-outline-secondary {
+  color:  #817171;
+  border-color: #817171;
+}
+
+.btn-outline-secondary:hover {
+  background: #817171;
+  color: white;
+}

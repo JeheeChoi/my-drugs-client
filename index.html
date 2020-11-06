@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+      <title>MyDrugs</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +14,71 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>MyDrugs</h1>
+      <br>
+      <form id="sign-up">
+      <div class="container-auth">
+        <h3>Sign Up</h3>
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
+        <input required type="password" name="credentials[password]" placeholder="Password" />
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm password" /><br>
+        <input type="Submit" class="btn btn-outline-secondary" value="REGISTER" />
+      </div>
+      </form>
+      <br>
+
+      <div id="message-display"></div>
+
+      <br>
+      <form id="sign-in">
+      <div class="container-auth">
+        <h3>Sign In</h3>
+        <!-- <label for="sign-in-email"></label> -->
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
+        <!-- <label for="sign-in-password"></label> -->
+        <input required type="password" name="credentials[password]" placeholder="Password"/><br>
+        <input type="Submit" class="btn btn-outline-secondary" value="SIGN IN" />
+      </div>
+      </form>
+
+      <br>
+
+      <form id="sign-out">
+      <div class="container-auth">
+      <h3>Sign Out</h3>
+        <input type="Submit" class="btn btn-outline-secondary" value="SIGN OUT" />
+      </div>
+      </form>
+
+      <br>
+
+      <form id="change-password">
+      <div class="container-auth">
+      <h3>Change PW</h3>
+      <input required type="password" name="passwords[old]" placeholder="Original password"/>
+      <input required type="password" name="passwords[new]" placeholder="New password" /><br>
+      <input type="Submit" class="btn btn-outline-secondary" value="SUBMIT" />
+      </div>
+      </form>
+
+      <br>
+
+      <form id="My-Prescriptions">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+        <label class="btn btn-outline-secondary active">
+          <input type="radio" name="options" id="add-prescription" />Add A New Prescription
+        </label>
+        <label class="btn btn-outline-secondary">
+          <input type="radio" name="options" id="update-prescription" /> View Prescriptions
+        </label>
+        <label class="btn btn-outline-secondary">
+          <input type="radio" name="options" id="find-prescription" /> Find A Prescription
+        </label>
+        <label class="btn btn-outline-secondary">
+          <input type="radio" name="options" id="dele-prescription" /> Delete A Prescription
+        </label>
+      </div>
+      </form>
+
     </body>
 </html>
