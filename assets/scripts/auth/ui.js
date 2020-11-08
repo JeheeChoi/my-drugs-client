@@ -4,8 +4,8 @@ const store = require('../store')
 const onSignUpSuccess = function (res) {
   const user = res.user
   $('#message-display').html(`
-    <h4>New user
-    ${user.email} successfully signed up!</h4>
+    <h5>New user
+    ${user.email} successfully signed up!</h5>
   `)
   $('#sign-up').trigger('reset')
 }
@@ -14,20 +14,20 @@ const onSignInSuccess = function (res) {
   const user = res.user
   store.user = res.user
   $('#message-display').html(`
-    <h4>Hello
-    ${user.email}! </h4>
+    <h5>Hello
+    ${user.email}! </h5>
   `)
   $('#sign-in').trigger('reset')
 }
 
 const onSignOutSuccess = function () {
   $('#message-display').html(`
-    <h4>User ${store.user.email} successfully signed out! </h4>
+    <h5>User ${store.user.email} successfully signed out! </h5>
   `)
 }
 
 const onChangePwSuccess = function () {
-  $('#message-display').html('<h4>Password successfully changed! </h4>')
+  $('#message-display').html('<h5>Password successfully changed! </h5>')
   $('#change-password').trigger('reset')
 }
 
