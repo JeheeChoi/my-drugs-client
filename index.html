@@ -14,67 +14,59 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>MyDrugs</h1>
-      <div id="message-display"></div>
+      <div class="container">
+        <div class="row 1">
+          <div class="col-sm-8"></div>
+          <div class="col-sm-4"><h1>MyDrugs</h1></div>
+        </div>
+        <div class="row 2">
+          <div class="col-6" id="message-display"></div>
+          <div class="col-6 btn-group btn-group-toggle">
+            <button type="button" class="btn btn-outline-secondary" name="options" id="index-prescription">My Prescriptions</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" name="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="update-prescription"> Manage Prescriptions</button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Add Prescriptions</a>
+            <a class="dropdown-item" href="#">Find Prescriptions</a>
+            <a class="dropdown-item" href="#">Edit Prescriptions</a>
+            <a class="dropdown-item" href="#">Delete Prescriptions</a>
+          </div>
+          </div>
+        </div>
+        <div class="row 3" id="main">
+          <div class="col-sm-4">
 
-      <div class="btn-group btn-group-toggle" data-toggle="buttons" >
-        <label class="btn btn-outline-secondary">
-          <input type="radio" name="options" id="index-prescription" />My Prescriptions
-        </label>
-        <label class="btn btn-outline-secondary">
-          <input type="radio" name="options" id="show-prescription" /> Search Prescriptions
-        </label>
-        <!-- <label class="btn btn-outline-secondary">
-          <input type="radio" name="options" id="create-prescription" />Add A New Prescription
-        </label> -->
-        <label class="btn btn-outline-secondary">
-          <input type="radio" name="options" id="update-prescription" /> Manage Prescriptions
-        </label>
-      </div>
+            <form id="sign-up">
+              <h3>Sign Up</h3>
+              <input required type="text" class="form-control" name="credentials[email]" placeholder ="Email address" />
+              <input required type="password" class="form-control" name="credentials[password]" placeholder="Password" />
+              <input required type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm password" />
+              <input type="Submit" class="btn btn-outline-secondary" value="REGISTER" />
+            </form>
+            <br>
+            <form id="sign-in">
+              <h3>Sign In</h3>
+              <input required type="text" class="form-control" name="credentials[email]" placeholder ="Email address" />
+              <input required type="password" class="form-control" name="credentials[password]" placeholder="Password"/>
+              <input type="Submit" class="btn btn-outline-secondary" value="SIGN IN" />
+            </form>
+            <br>
+            <form id="sign-out">
+            <h3>Sign Out</h3>
+              <input type="Submit" class="btn btn-outline-secondary" value="SIGN OUT" />
+            </form>
+            <br>
+            <form id="change-password">
+            <h3>Change PW</h3>
+            <input required type="password" class="form-control" name="passwords[old]" placeholder="Original password"/>
+            <input required type="password" class="form-control" name="passwords[new]" placeholder="New password" />
+            <input type="Submit" class="btn btn-outline-secondary" value="SUBMIT" />
+            </form>
 
-      <form id="sign-up">
-      <div class="container-auth">
-        <h3>Sign Up</h3>
-        <br>
-        <input required type="text" class="form-control" name="credentials[email]" placeholder ="Email address" />
-        <input required type="password" class="form-control" name="credentials[password]" placeholder="Password" />
-        <input required type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm password" />
-        <br>
-        <input type="Submit" class="btn btn-outline-secondary" value="REGISTER" />
-      </div>
-      </form>
+          </div>
+          <div class="col-sm-8" id="prescription-page"><h5>My Prescriptions</h5></div>
+        </div>
 
-      <br>
-      <form id="sign-in">
-      <div class="container-auth">
-        <h3>Sign In</h3>
-        <br>
-        <input required type="text" class="form-control" name="credentials[email]" placeholder ="Email address" />
-        <input required type="password" class="form-control" name="credentials[password]" placeholder="Password"/>
-        <br>
-        <input type="Submit" class="btn btn-outline-secondary" value="SIGN IN" />
-      </div>
-      </form>
-
-      <br>
-
-      <form id="sign-out">
-      <div class="container-auth">
-      <h3>Sign Out</h3>
-        <input type="Submit" class="btn btn-outline-secondary" value="SIGN OUT" />
-      </div>
-      </form>
-
-      <br>
-
-      <form id="change-password">
-      <div class="container-auth">
-      <h3>Change PW</h3>
-      <input required type="password" class="form-control" name="passwords[old]" placeholder="Original password"/>
-      <input required type="password" class="form-control" name="passwords[new]" placeholder="New password" /><br>
-      <input type="Submit" class="btn btn-outline-secondary" value="SUBMIT" />
-      </div>
-      </form>
+    </div>
 
       <!-- <h3>My Prescriptions</h3>
       <a class="btn btn-outline-secondary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add A New Prescription</a>
@@ -88,10 +80,6 @@
           </div>
         </div>
       </div> -->
-
-      <br>
-
-
 
     </body>
 </html>

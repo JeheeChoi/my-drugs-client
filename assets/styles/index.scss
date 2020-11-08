@@ -3,30 +3,48 @@
 body {
   background-color: #E3D8D8;
   font-family: 'Montserrat Alternates', sans-serif;
-  font-family: 'Sawarabi Mincho', sans-serif;
+  // font-family: 'Sawarabi Mincho', sans-serif;
   color: #817171;
-  margin: 150px 150px;
+  margin: 100px 150px;
 }
-div {
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-}
-.btn-group-toggle {
-  display: flex;
-  justify-content: flex-end;
-}
-// form {
-//   border: 1px solid #817171;
-//   border-radius: 4px;
-// }
 
 h1 {
   font-family: 'Montserrat Alternates', sans-serif;
   color: black;
   text-align: right;
 }
+
+#message-display {
+  padding: 25px;
+  text-align: center;
+
+}
+.btn-group-toggle {
+  padding: 15px;
+}
+
+.form-control {
+  width: 250px;
+}
+
+.col-sm-8 {
+  padding: 15px 15px 0px 0px;
+  text-align: right;
+}
+
+.col-sm-4  {
+  padding: 0px 35px;
+}
+
+#main {
+  padding: 15px;
+}
+#prescription-page {
+  border: 2px solid white;
+}
+
+
+
 
 .btn-outline-secondary {
   color:  #817171;
@@ -41,7 +59,4 @@ h1 {
 .btn-outline-secondary:focus {
   background: #817171;
   color: white;
-}
-.form-control {
-  width: 200px;
 }
