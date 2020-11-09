@@ -31,6 +31,13 @@ h1 {
   padding: 25px;
 }
 
+.col-8 {
+  text-align: center;
+}
+.col-4 {
+  padding: 0px 0px 0px 70px;
+}
+
 // .col-sm-4  {
 //   padding: 0px 35px;
 // }
@@ -41,7 +48,7 @@ h1 {
 #auth {
   padding: 0px 0px 0px 70px;
 }
-#prescription-page {
+#main-page {
   border: 2px solid white;
 }
 

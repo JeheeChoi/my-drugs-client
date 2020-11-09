@@ -3,16 +3,18 @@
 const api = require('./api')
 const ui = require('./ui')
 // const getFormFields = require('../../../lib/get-form-fields.js')
+const store = require('./../store')
+
 console.log(ui)
 
-const createDrugs = function (event) {
+const hrefIndex = function (event) {
   event.preventDefault()
-  api.createDrugs()
-    .then(ui.onCreateDrugsSuccess)
-    // .then(ui.onIndexDrugsSuccess)
-    .catch(ui.onCreateDrugsError)
+  api.indexDrugs()
+    .then(ui.onHrefIndexSuccess)
+    .catch(ui.onHrefIndexError)
 }
 
+// VIEW ALL PRESCRIPTIONS
 const indexDrugs = function (event) {
   // console.log(event)
   event.preventDefault()
@@ -26,7 +28,27 @@ const indexDrugs = function (event) {
     .catch(ui.onIndexDrugsError)
 }
 
+const hrefCreate = function (event) {
+  event.preventDefault()
+  $('#create').show()
+  $('#index-drugs').hide()
+  const user = store.user
+  $('#status-message-display').html(`<h4>Hello ${user.email}! Create a new prescription here:</h4>
+      `)
+  $('#prescription-page').html('')
+}
+
+// CREATE NEW PRESCRIPTIONS
+const createDrugs = function (event) {
+  event.preventDefault()
+  api.createDrugs()
+    .then(ui.onCreateDrugsSuccess)
+    .catch(ui.onCreateDrugsError)
+}
+
 module.exports = {
+  hrefIndex,
+  indexDrugs,
   createDrugs,
-  indexDrugs
+  hrefCreate
 }
