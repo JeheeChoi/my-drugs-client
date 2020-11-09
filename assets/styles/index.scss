@@ -28,16 +28,18 @@ h1 {
 }
 
 .col-sm-8 {
-  padding: 15px 15px 0px 0px;
-  text-align: right;
+  padding: 25px;
 }
 
-.col-sm-4  {
-  padding: 0px 35px;
-}
+// .col-sm-4  {
+//   padding: 0px 35px;
+// }
 
 #main {
   padding: 15px;
+}
+#auth {
+  padding: 0px 0px 0px 70px;
 }
 #prescription-page {
   border: 2px solid white;

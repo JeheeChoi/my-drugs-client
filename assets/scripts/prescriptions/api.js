@@ -1,14 +1,37 @@
 const config = require('../config')
 const store = require('../store')
 
-const manageDrugs = formData => {
+// CREATE A NEW PRESCRIPTION
+const createDrugs = formData => {
+  const user = store.user
+  const headers = {}
+  if (user) {
+    headers.Authorization = 'Bearer ' + user.token
+  }
   return $.ajax({
-    url: config.apiUrl + '/sign-up',
+    url: config.apiUrl + '/prescriptions',
     method: 'POST',
-    data: formData
+    data: {},
+    headers
+  })
+} // else { console.log('User not logged in.') }
+
+// SHOW ALL THE PRESCRIPTIONS USER CREATED
+const indexDrugs = formData => {
+  const user = store.user
+  const headers = {}
+  if (user) {
+    headers.Authorization = 'Bearer ' + user.token
+  }
+  return $.ajax({
+    url: config.apiUrl + '/prescriptions',
+    method: 'GET',
+    data: {},
+    headers
   })
 }
 
 module.exports = {
-  manageDrugs
+  indexDrugs,
+  createDrugs
 }
