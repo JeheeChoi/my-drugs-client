@@ -26,7 +26,7 @@ const createDrugs = formData => {
   return $.ajax({
     url: config.apiUrl + '/prescriptions',
     method: 'POST',
-    data: {},
+    data: formData,
     headers
   })
 } // else { console.log('User not logged in.') }

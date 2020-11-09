@@ -4,6 +4,7 @@ const api = require('./api')
 const ui = require('./ui')
 // const getFormFields = require('../../../lib/get-form-fields.js')
 const store = require('./../store')
+const getFormFields = require('../../../lib/get-form-fields.js')
 
 console.log(ui)
 
@@ -41,7 +42,11 @@ const hrefCreate = function (event) {
 // CREATE NEW PRESCRIPTIONS
 const createDrugs = function (event) {
   event.preventDefault()
-  api.createDrugs()
+
+  const form = event.target
+  const formData = getFormFields(form)
+
+  api.createDrugs(formData)
     .then(ui.onCreateDrugsSuccess)
     .catch(ui.onCreateDrugsError)
 }

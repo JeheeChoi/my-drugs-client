@@ -63,7 +63,7 @@ const onCreateDrugsSuccess = function (res) {
 
 const onIndexDrugsError = function (error) {
   $('#message-display').text('Error Getting Prescription Code: ' + error.statusText)
-  // console.log('error is:', error)
+  console.log('error is:', error)
 }
 
 const onCreateDrugsError = function (error) {
