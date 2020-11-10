@@ -1,19 +1,19 @@
 const store = require('./../store')
 
-const onHrefIndexSuccess = function (res) {
-  const user = store.user
-  const prescriptions = res.prescriptions
-  $('#index-drugs').show()
-  $('#create').hide()
-  $('#status-message-display').html(`<h4>${user.email} has ${prescriptions.length} prescriptions</h4>`)
-  $('#prescription-page').html('')
-}
+// const onHrefIndexSuccess = function (res) {
+//   const user = store.user
+//   const prescriptions = res.prescriptions
+//   $('#index-drugs').show()
+//   $('#create').hide()
+//   $('#status-message-display').html(`<h4>${user.email} has ${prescriptions.length} prescriptions</h4>`)
+//   $('#prescription-page').html('')
+// }
 // GET
 // VIEW ALL THE PRESCRIPTIONS
 const onIndexDrugsSuccess = function (res) {
   console.log(res)
   $('#create').hide()
-
+  $('#update-index').hide()
   const user = store.user
   const prescriptions = res.prescriptions
   $('#status-message-display').html(`<h4>${user.email} has ${prescriptions.length} prescriptions</h4>`)
@@ -22,12 +22,12 @@ const onIndexDrugsSuccess = function (res) {
   prescriptions.forEach(function (prescription) {
     const prescriptionHTML = (`
       <br>
+      <p>ID: ${prescription._id}</p>
       <h4>Name: ${prescription.name}</h4>
       <p>Description: ${prescription.description}</p>
       <p>Dr: ${prescription.dr}</p>
       <p>Date: ${prescription.date}</p>
       <p>Refill: ${prescription.refill}</p>
-      <p>ID: ${prescription._id}</p>
       <br>
     `)
     $('#prescription-page').append(prescriptionHTML)
@@ -37,28 +37,36 @@ const onIndexDrugsSuccess = function (res) {
 const onHrefCreateSuccess = function (res) {
 
 }
+// UPDATE && INDEX Prescriptions
+const onUpdateIndexDrugsSuccess = function (res) {
+  // const user = store.user
+  const prescriptions = res.prescriptions
+  $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
+  // $('#update-index').html('')
+
+  prescriptions.forEach(function (prescription) {
+    const prescriptionHTML = (`
+      <br>
+      <p>ID: ${prescription._id}</p>
+      <h4>Name: ${prescription.name}</h4>
+      <p>Description: ${prescription.description}</p>
+      <p>Dr: ${prescription.dr}</p>
+      <p>Date: ${prescription.date}</p>
+      <p>Refill: ${prescription.refill}</p>
+      <br>
+    `)
+    $('#update-index').append(prescriptionHTML)
+  })
+}
 
 const onCreateDrugsSuccess = function (res) {
-  console.log(res)
-
+  console.log('This is res', res)
   const user = store.user
   // const prescriptions = res.prescriptions
-
+  // console.log('lastIndex', prescriptions.slice(-1))
+  $('#update-index').hide()
   $('#create-drugs').trigger('reset')
   $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
-  //
-  // prescriptions.lastIndexOf(function (prescription) {
-  //   const prescriptionHTML = (`
-  //     <h4>Name: ${prescription.name}</h4>
-  //     <p>Description: ${prescription.description}</p>
-  //     <p>Dr: ${prescription.dr}</p>
-  //     <p>Date: ${prescription.date}</p>
-  //     <p>Refill: ${prescription.refill}</p>
-  //     <p>ID: ${prescription._id}</p>
-  //     <br>
-  //     `)
-  //   $('#prescription-page').append(prescriptionHTML)
-  // })
 }
 
 const onIndexDrugsError = function (error) {
@@ -77,10 +85,10 @@ const onHrefCreateError = function (error) {
 }
 
 module.exports = {
-  onHrefIndexSuccess,
   onIndexDrugsSuccess,
   onCreateDrugsSuccess,
   onHrefCreateSuccess,
+  onUpdateIndexDrugsSuccess,
   onCreateDrugsError,
   onHrefCreateError,
   onIndexDrugsError

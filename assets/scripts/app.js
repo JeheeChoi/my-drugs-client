@@ -16,9 +16,8 @@ $(() => {
   $('#change-password').on('submit', authEvents.changePassword)
   //
   // Prescription events
-  $('#index-drugs').hide()
-  $('#index-button').on('click', drugEvents.hrefIndex)
   $('#index-drugs').on('click', drugEvents.indexDrugs)
   $('#create-button').on('click', drugEvents.hrefCreate)
   $('#create-drugs').on('submit', drugEvents.createDrugs)
+  $('#update-button').on('click', drugEvents.hrefUpdate)
 })
