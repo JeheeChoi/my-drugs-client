@@ -18,13 +18,17 @@ const onSignInSuccess = function (res) {
     ${user.email}! </h5>
   `)
   $('#sign-in').trigger('reset')
+  $('#prescription-page').show()
+  $('#index-page').hide()
+  $('#create-page').hide()
+  $('#update-page').hide()
 }
 
 const onSignOutSuccess = function () {
   $('#message-display').html(`
     <h5>User ${store.user.email} successfully signed out! </h5>
   `)
-  $('#prescription-page').html('')
+  $('#prescription-page').hide()
   $('#status-message-display').html('')
 }
 

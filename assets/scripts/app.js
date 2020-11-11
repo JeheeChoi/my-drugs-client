@@ -16,16 +16,21 @@ $(() => {
   $('#change-password').on('submit', authEvents.changePassword)
   //
   // Prescription events
-  $('#prescription-tb').hide()
-  $('#edit').hide()
-  $('#add').hide()
-  $('#add-new-button').hide()
-  // $('#update').hide()
-  // $('#edit').hide()
+  $('#prescription-page').hide()
+  // My INDEX Prescription page
   $('#index-drugs').on('click', drugEvents.indexDrugs)
+  // It goes to Add/Remov prescription page
   $('#add-button').on('click', drugEvents.hrefCreate)
+  // Add new button on Add/Remov prescription page
   $('#add-new-button').on('click', drugEvents.hrefAdd)
+  // Remove button on Add/Remove prescription page
+  $('#remove-button').on('click', drugEvents.hrefRemove)
+  // ACTUAL CREATE Prescription event listener
   $('#create-drugs').on('submit', drugEvents.createDrugs)
+  // DELETE Prescription event listener
+  $('#remove-drugs').on('submit', drugEvents.deleteDrugs)
+  // It goes to update prescription page
   $('#update-button').on('click', drugEvents.hrefUpdate)
+  //
   $('#edit').on('click', drugEvents.hrefEdit)
 })
