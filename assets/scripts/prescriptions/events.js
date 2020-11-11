@@ -24,7 +24,7 @@ const indexDrugs = function (event) {
   $('#add').hide()
   $('#add-drugs-button-div').hide()
   $('#update').hide()
-  $('#edit').hide()
+  // $('#edit').hide()
   $('.edit').hide()
 
   // const result = api.indexDrugs()
@@ -40,7 +40,7 @@ const hrefAdd = function (event) {
   event.preventDefault()
   $('#add').show()
   $('#edit').hide()
-  $('.btn-sm').hide()
+  $('.edit').hide()
 }
 
 const hrefCreate = function (event) {
@@ -49,9 +49,9 @@ const hrefCreate = function (event) {
   $('#status-message-display').html('<h4>Add New Prescriptions Here:</h4>')
   // $('#add').hide()
   $('#update').show()
-
+  $('#add-new-button').show()
   $('#edit').hide()
-  $('.btn-sm').hide()
+  $('.edit').hide()
   // const user = store.user
   // $('#status-message-display').html('<h4>Add Your Prescriptions Here:</h4>')
   // $('#prescription-page').html('')
@@ -70,22 +70,19 @@ const createDrugs = function (event) {
 
 const hrefEdit = function (event) {
   event.preventDefault()
+
+  $('#edit').show()
   // $('#add').hide()
   // $('#update').show()
-  $('#edit').show()
-  $('.btn-sm').show()
-  $('#add-drugs-button-div').hide()
 }
-
+// UPDATE PAGE(Shows the list of prescriptons and the buttons for "edit")
 const hrefUpdate = function (event) {
   event.preventDefault()
   $('#add').hide()
-  $('#update').show()
-  $('#edit').hide()
-  $('.btn-sm').show()
   $('#add-drugs-button-div').hide()
+
   // const user = store.user
-  $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
+  // $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
 
   api.indexDrugs()
     .then(ui.onUpdateIndexDrugsSuccess)

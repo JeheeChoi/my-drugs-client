@@ -60,92 +60,53 @@
               <input required type="password" class="form-control" name="passwords[new]" placeholder="New password" />
               <input type="Submit" class="btn btn-outline-secondary" value="SUBMIT" />
             </form>
-
           </div>
+
           <div class="col-sm-9" id="main-page">
             <div id="status-message-display"></div>
-            <div id="prescription-page">
-
 
             <div id="table">
-              <table class="table table-hover table-sm" id="prescription-tb">
+              <table class="table table-hover" id="prescription-tb">
                 <thead>
+                  <!--<tbody>
+
+                      </tbody> -->
                   <tr>
-                    <!-- <th scope="col">ID#</th> -->
-                    <th scope="col">ID</th>
                     <th scope="col">NAME</th>
                     <th scope="col">DESCRIPTION</th>
-                    <th scope="col">DATE</th>
+                    <th scope="col">ID</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
-              <!--<tbody>
-                    <tr>
-                      <th scope="row">#</th>
-                      <td>Adderall</td>
-                      <td>Amphetamine/dextroamphetamine</td>
-                      <td>Anderson,MD</td>
-                      <td><input type="Submit" class="btn btn-outline-secondary btn-sm edit" value="Edit"/></td>
-
-                    </tr>
-                    <tr>
-                      <th scope="row">#</th>
-                      <td>Zyrtec</td>
-                      <td>Allergy med</td>
-                      <td>n/a</td>
-                      <td><input type="Submit" class="btn btn-outline-secondary btn-sm edit" value="Edit" /></td>
-
-                    </tr>
-                    <tr>
-                      <th scope="row">#</th>
-                      <td>Tylenol</td>
-                      <td>Treat minor aches and pains</td>
-                      <td>Smith,MD</td>
-                      <td><input type="Submit" class="btn btn-outline-secondary btn-sm edit" value="Edit" /></td>
-
-                    </tr>
-                  </tbody> -->
-                </table>
-              <div id="add-drugs-button-div">
-                <input type="Submit" class="btn btn-outline-secondary" value="Add New Prescription" id="add-drugs-button"/>
-              </div>
-              <div id="edit">
-                <div class="card card-body">
-                  <form id="edit-drugs">
-                  <!-- <h3>UPDATE Selected Prescription</h3> -->
-                  <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
-                  <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
-                  <label for="drug-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
-                  <label for="drug-name">Prescription Issued Date:<input required type="text" class="form-control" name="prescription[date]" placeholder ="ex) 11-01-20" /></label>
-                  <label for="drug-name">Refill:<input required type="text" class="form-control" name="prescription[refill]" placeholder ="ex) Yes/No" /></label>
-                  <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
-                  </form>
-                </div>
-              </div>
-              <!-- <div class="card card-body"> -->
-                <!-- <form id="update-drugs">
-                <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
-                <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
-                <label for="drug-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
-                <label for="drug-name">Prescription Issued Date:<input required type="text" class="form-control" name="prescription[date]" placeholder ="ex) 11-01-20" /></label>
-                <label for="drug-name">Refill:<input required type="text" class="form-control" name="prescription[refill]" placeholder ="ex) Yes/No" /></label>
-                <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
-                </form> -->
-              </div>
+              </table>
             </div>
 
-            <div id="add">
-              <div class="card card-body">
-                <form id="create-drugs">
-                <!-- <h3>ADD New Prescription</h3> -->
-                <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
-                <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
-                <label for="drug-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
-                <label for="drug-name">Prescription Issued Date:<input required type="text" class="form-control" name="prescription[date]" placeholder ="ex) 11-01-20" /></label>
-                <label for="drug-name">Refill:<input required type="text" class="form-control" name="prescription[refill]" placeholder ="ex) Yes/No" /></label>
-                <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
-                </form>
-              </div>
+            <div id="add-drugs-button-div">
+              <input type="Submit" class="btn btn-outline-secondary" value="Add New Prescription" id="add-new-button"/>
+            </div>
+
+            <div class="card card-body" id="edit">
+              <form id="edit-drugs">
+              <!-- <h3>UPDATE Selected Prescription</h3> -->
+              <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
+              <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
+              <label for="drug-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
+              <label for="drug-name">Prescription Issued Date:<input required type="text" class="form-control" name="prescription[date]" placeholder ="ex) 11-01-20" /></label>
+              <label for="drug-name">Refill:<input required type="text" class="form-control" name="prescription[refill]" placeholder ="ex) Yes/No" /></label>
+              <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
+              </form>
+            </div>
+
+            <div class="card card-body" id="add">
+              <form id="create-drugs">
+              <!-- <h3>ADD New Prescription</h3> -->
+              <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
+              <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
+              <label for="drug-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
+              <label for="drug-name">Prescription Issued Date:<input required type="text" class="form-control" name="prescription[date]" placeholder ="ex) 11-01-20" /></label>
+              <label for="drug-name">Refill:<input required type="text" class="form-control" name="prescription[refill]" placeholder ="ex) Yes/No" /></label>
+              <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
+              </form>
             </div>
           </div>
         </div>
