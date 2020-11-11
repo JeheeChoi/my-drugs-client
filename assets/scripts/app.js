@@ -16,8 +16,14 @@ $(() => {
   $('#change-password').on('submit', authEvents.changePassword)
   //
   // Prescription events
+  $('#prescription-page').hide()
+  $('#add').hide()
+  // $('#update').hide()
+  // $('#edit').hide()
   $('#index-drugs').on('click', drugEvents.indexDrugs)
-  $('#create-button').on('click', drugEvents.hrefCreate)
+  $('#add-button').on('click', drugEvents.hrefCreate)
+  $('#add-drugs-button').on('click', drugEvents.hrefAdd)
   $('#create-drugs').on('submit', drugEvents.createDrugs)
   $('#update-button').on('click', drugEvents.hrefUpdate)
+  $('.btn-sm').on('click', drugEvents.hrefEdit)
 })

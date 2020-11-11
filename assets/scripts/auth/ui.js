@@ -24,6 +24,8 @@ const onSignOutSuccess = function () {
   $('#message-display').html(`
     <h5>User ${store.user.email} successfully signed out! </h5>
   `)
+  $('#prescription-page').html('')
+  $('#status-message-display').html('')
 }
 
 const onChangePwSuccess = function () {

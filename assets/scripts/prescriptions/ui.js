@@ -17,20 +17,29 @@ const onIndexDrugsSuccess = function (res) {
   const user = store.user
   const prescriptions = res.prescriptions
   $('#status-message-display').html(`<h4>${user.email} has ${prescriptions.length} prescriptions</h4>`)
-  // $('#prescription-page').html('')
+
+  // RESET THE PRESCRIPTION INDEX PAGE SO IT DOESN'T ADD UP THE LIST OF DATA
+  $('#prescription-tb tbody').html('')
 
   prescriptions.forEach(function (prescription) {
+    if ($('#prescription-tb tbody').length === 0) {
+      $('#prescription-tb').append('<tbody></tbody>')
+    }
+    // $('#prescription-tb tbody').append('<tr>' +
+    //       '<td>My First Video</td>' +
+    //       '<td>6/11/2015</td>' +
+    //       '<td>www.pluralsight.com</td>' +
+    //       '</tr>')
     const prescriptionHTML = (`
-      <br>
-      <p>ID: ${prescription._id}</p>
-      <h4>Name: ${prescription.name}</h4>
-      <p>Description: ${prescription.description}</p>
-      <p>Dr: ${prescription.dr}</p>
-      <p>Date: ${prescription.date}</p>
-      <p>Refill: ${prescription.refill}</p>
-      <br>
+      <tr>
+      <td>${prescription._id}</td>
+      <td>${prescription.name}</td>
+      <td>${prescription.description}</td>
+      <td>${prescription.date}</td>
+      <td></td>
+      <tr>
     `)
-    $('#prescription-page').append(prescriptionHTML)
+    $('#prescription-tb tbody').append(prescriptionHTML)
   })
 }
 

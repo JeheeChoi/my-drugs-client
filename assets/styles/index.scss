@@ -5,7 +5,7 @@ body {
   font-family: 'Montserrat Alternates', sans-serif;
   // font-family: 'Sawarabi Mincho', sans-serif;
   color: #817171;
-  margin: 50px 0px 0px 0px;
+  // margin: 50px 0px 0px 0px;
 }
 
 
@@ -28,7 +28,7 @@ h1 {
   width: 250px;
 }
 
-.col-sm-8 {
+.col-sm-9 {
   padding: 20px;
 }
 
@@ -39,27 +39,24 @@ h1 {
   padding: 0px 0px 0px 70px;
 }
 
+
 #status-message-display {
   text-align: left;
   padding: 0px 5px 0px 0px;
 }
 
-// .col-sm-4  {
-//   padding: 0px 35px;
-// }
-
 #main {
   padding: 15px;
 }
 #auth {
-  padding: 0px 0px 0px 70px;
+  // padding: 0px 0px 0px 70px;
+}
+#add-drugs-button-div {
+  padding: 0px 0px 0px 490px;
 }
 #main-page {
   border: 2px solid white;
 }
-
-
-
 
 .btn-outline-secondary {
   color:  #817171;
@@ -75,3 +72,12 @@ h1 {
   background: #817171;
   color: white;
 }
+.form-control {
+  width: 200px;
+}
+// .edit {
+//   display: none; /* Hide button */
+// }
+// .edit:hover {
+//   display: block; /* On :hover of div show button */
+// }
