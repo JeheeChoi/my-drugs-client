@@ -1,19 +1,25 @@
 
 # Full Stack Project - MyDrugs
 
--A drug prescription app(stores the prescription and the drug info)
--I've thought about this app idea when I personally experienced how impossible it is
+- A drug prescription app(stores the prescription and the drug info)
+- I've thought about this app idea when I personally experienced how impossible it is
 to remember the names of the meds/when did I get it/refill?/dr's name?/description/etc.
--Any patients who get prescriptions from a doctor
+- Any patients who get prescriptions from a doctor
+
+## Important Links
+
+- [Project Repo Front End] (https://github.com/JeheeChoi/my-drugs-client)
+- [Deployed API](https://salty-woodland-25840.herokuapp.com/prescriptions)
+- [Deployed Client](https://jeheechoi.github.io/my-drugs-client/)
 
 
 ## User stories
 
--User can sign up/sign in/sign out/change pw
--User can create(add) a record of a prescription
--User can see all the prescriptions that are stored
--User can update the prescriptions(log side effects, likes/dislikes)
--User can delete(archieve) the prescriptions
+- User can sign up/sign in/sign out/change pw
+- User can create(add) a record of a prescription
+- User can see all the prescriptions that are stored
+- User can update the prescriptions(log side effects, likes/dislikes)
+- User can delete(archieve) the prescriptions
 
 
 ## Wireframes
