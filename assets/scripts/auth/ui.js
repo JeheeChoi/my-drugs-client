@@ -36,6 +36,8 @@ const onSignOutSuccess = function () {
   $('#status-message-display').html('')
   $('#sign-up').show()
   $('#sign-in').show()
+  $('#sign-out').hide()
+  $('#change-password').hide()
 }
 
 const onChangePwSuccess = function () {
