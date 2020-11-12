@@ -42,6 +42,9 @@ const hrefCreate = function (event) {
   // const user = store.user
   // $('#status-message-display').html('<h4>Add Your Prescriptions Here:</h4>')
   // $('#prescription-page').html('')
+  api.hrefCreate()
+    .then(ui.onHrefCreateSuccess)
+    .catch(ui.onHrefCreateError)
 }
 // On click ADD/REMOVE Button - href TO OPEN ADD/REMOVE card on the PAGE
 const hrefAdd = function (event) {
@@ -104,6 +107,15 @@ const hrefEdit = function (event) {
   event.preventDefault()
 }
 
+const updateDrugs = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updateDrugs(formData)
+    .then(ui.onUpdateDrugsSuccess)
+    .catch(ui.onUpdateDrugsError)
+}
+
 module.exports = {
   indexDrugs,
   createDrugs,
@@ -112,5 +124,6 @@ module.exports = {
   hrefRemove,
   hrefCreate,
   hrefEdit,
-  hrefUpdate
+  hrefUpdate,
+  updateDrugs
 }

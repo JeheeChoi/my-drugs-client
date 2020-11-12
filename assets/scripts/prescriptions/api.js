@@ -56,13 +56,27 @@ const hrefUpdate = formData => {
   })
 }
 
+const hrefCreate = formData => {
+  const user = store.user
+  const headers = {}
+  if (user) {
+    headers.Authorization = 'Bearer ' + user.token
+  }
+  return $.ajax({
+    url: config.apiUrl + '/prescriptions',
+    method: 'GET',
+    data: {},
+    headers
+  })
+}
+
 const updateDrugs = formData => {
-  // const user = store.user
+  const user = store.user
   return $.ajax({
     url: config.apiUrl + '/prescriptions/' + formData.prescription._id,
     method: 'PATCH',
     headers: {
-      Authorization: 'Bearer ' + store.user.token
+      Authorization: 'Bearer ' + user.token
     },
     data: formData
   })
@@ -73,5 +87,6 @@ module.exports = {
   createDrugs,
   deleteDrugs,
   updateDrugs,
-  hrefUpdate
+  hrefUpdate,
+  hrefCreate
 }

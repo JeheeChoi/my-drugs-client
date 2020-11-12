@@ -33,4 +33,6 @@ $(() => {
   $('#update-button').on('click', drugEvents.hrefUpdate)
   //
   $('#edit').on('click', drugEvents.hrefEdit)
+  //
+  $('#update-drugs').on('submit', drugEvents.updateDrugs)
 })
