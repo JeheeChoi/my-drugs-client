@@ -8,7 +8,7 @@ to remember the names of the meds/when did I get it/refill?/dr's name?/descripti
 
 ## Important Links
 
-- [Project Repo Front End] (https://github.com/JeheeChoi/my-drugs-client)
+- [Project Repo](https://github.com/JeheeChoi/my-drugs-client)
 - [Deployed API](https://salty-woodland-25840.herokuapp.com/prescriptions)
 - [Deployed Client](https://jeheechoi.github.io/my-drugs-client/)
 
@@ -65,7 +65,7 @@ Write a basic timetable for yourself, you don't have to stick to it but it
 helps to go in with a plan.
 
 
-Day 1 - Setting up repos, READme, consulting with instructor, pseudo code, start working on userSchema
-Day 2 - Working on user - server.js/model/user routes/curl scripts
-Day 3 - Working on prescription - server.js/model/prescription routes/curl scripts
-Day 4 - Finishing up Working on front end
+- Day 1 - Setting up repos, READme, consulting with instructor, pseudo code, start working on userSchema
+- Day 2 - Working on user - server.js/model/user routes/curl scripts
+- Day 3 - Working on prescription - server.js/model/prescription routes/curl scripts
+- Day 4 - Finishing up Working on front end
