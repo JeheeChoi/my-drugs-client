@@ -12,6 +12,14 @@ to remember the names of the meds/when did I get it/refill?/dr's name?/descripti
 - [Deployed API](https://salty-woodland-25840.herokuapp.com/prescriptions)
 - [Deployed Client](https://jeheechoi.github.io/my-drugs-client/)
 
+### Technologies Used
+
+- JavaScript
+- HTML/CSS
+- jQuery
+- Express
+- Mongoose
+
 
 ## User stories
 
@@ -53,7 +61,6 @@ https://imgur.com/a/NTsBb3s
 ## Routing
 
 What routes will you need to make the proper request to your API?
-
 
 user routes
 prescription routes
