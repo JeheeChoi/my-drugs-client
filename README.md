@@ -12,7 +12,7 @@ to remember the names of the meds/when did I get it/refill?/dr's name?/descripti
 - [Deployed API](https://salty-woodland-25840.herokuapp.com/prescriptions)
 - [Deployed Client](https://jeheechoi.github.io/my-drugs-client/)
 
-### Technologies Used
+## Technologies Used
 
 - JavaScript
 - HTML/CSS
