@@ -18,10 +18,14 @@ const onSignInSuccess = function (res) {
     ${user.email}! </h5>
   `)
   $('#sign-in').trigger('reset')
+  $('#sign-out').show()
+  $('#change-password').show()
   $('#prescription-page').show()
   $('#index-page').hide()
   $('#create-page').hide()
   $('#update-page').hide()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 }
 
 const onSignOutSuccess = function () {
@@ -30,6 +34,8 @@ const onSignOutSuccess = function () {
   `)
   $('#prescription-page').hide()
   $('#status-message-display').html('')
+  $('#sign-up').show()
+  $('#sign-in').show()
 }
 
 const onChangePwSuccess = function () {

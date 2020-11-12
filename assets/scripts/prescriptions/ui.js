@@ -25,7 +25,6 @@ const onIndexDrugsSuccess = function (res) {
       <td>${prescription.name}</td>
       <td>${prescription.description}</td>
       <td>${prescription.dr}</td>
-      <td>${prescription._id}</td>
       <tr>
     `)
     $('#prescription-tb tbody').append(prescriptionHTML)

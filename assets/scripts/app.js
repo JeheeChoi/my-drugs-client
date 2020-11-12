@@ -10,6 +10,11 @@ const drugEvents = require('./prescriptions/events')
 
 $(() => {
   // your JS code goes here
+
+  // auth events
+  $('#sign-out').hide()
+  $('#change-password').hide()
+
   $('#sign-up').on('submit', authEvents.signUp)
   $('#sign-in').on('submit', authEvents.signIn)
   $('#sign-out').on('submit', authEvents.signOut)
