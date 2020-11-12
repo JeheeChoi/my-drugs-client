@@ -36,8 +36,10 @@ $(() => {
   $('#remove-drugs').on('submit', drugEvents.deleteDrugs)
   // It goes to update prescription page
   $('#update-button').on('click', drugEvents.hrefUpdate)
+  // It opens update prescription card form
+  $('#edit-button').on('click', drugEvents.hrefEdit)
   //
   $('#edit').on('click', drugEvents.hrefEdit)
-  //
+  // UPDATE Prescription
   $('#update-drugs').on('submit', drugEvents.updateDrugs)
 })

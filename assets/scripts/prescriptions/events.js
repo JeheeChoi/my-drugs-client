@@ -89,12 +89,12 @@ const hrefUpdate = function (event) {
   $('#index-page').hide()
   $('#update-page').show()
 
+  $('#edit-drugs-button-div').show()
   $('#create-page').hide()
   $('#add-drugs-button-div').hide()
   $('#remove-drugs-button-div').hide()
 
   $('#edit').hide()
-  $('.edit').show()
   // const user = store.user
   // $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
   api.hrefUpdate()
@@ -105,6 +105,7 @@ const hrefUpdate = function (event) {
 // UPDATE Prescription loading PAGE
 const hrefEdit = function (event) {
   event.preventDefault()
+  $('#edit').show()
 }
 
 const updateDrugs = function (event) {

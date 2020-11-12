@@ -34,8 +34,8 @@ const onIndexDrugsSuccess = function (res) {
 // CREATE PRESCRIPTION PAGE - JUST THE PAGE TO SHOW THE LIST & THE OPTION TO ADD
 const onCreateDrugsSuccess = function (res) {
   $('#update').hide()
+  $('#index-page').hide()
   $('#create').show()
-  $('#index-page').show()
   $('#create-drugs').trigger('reset')
 
   // const prescriptions = res.prescriptions
