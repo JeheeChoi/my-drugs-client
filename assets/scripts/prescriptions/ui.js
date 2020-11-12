@@ -42,7 +42,15 @@ const onCreateDrugsSuccess = function (res) {
   // console.log('lastIndex', prescriptions.slice(-1))
   const user = store.user
   $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
+}
 
+const onDeleteDrugsSuccess = function (res) {
+  $('#index-page').show()
+  // $('#add-drugs-button-div').hide()
+  $('#remove-drugs').trigger('reset')
+}
+// Create prescription landing page
+const onHrefCreateSuccess = function (res) {
   const prescriptions = res.prescriptions
   // RESET THE PRESCRIPTION INDEX PAGE SO IT DOESN'T ADD UP THE LIST OF DATA
   $('#create-prescription-tb tbody').html('')
@@ -69,14 +77,6 @@ const onCreateDrugsSuccess = function (res) {
   })
 }
 
-const onDeleteDrugsSuccess = function (res) {
-  $('#index-page').show()
-  // $('#add-drugs-button-div').hide()
-  $('#remove-drugs').trigger('reset')
-}
-const onHrefCreateSuccess = function (res) {
-
-}
 // UPDATE && INDEX Prescriptions
 const onHrefUpdateSuccess = function (res) {
   // const user = store.user
@@ -118,7 +118,7 @@ const onUpdateDrugsSuccess = function (res) {
   const user = store.user
   $('#update-drugs').trigger('reset')
 
-  $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
+  $('#status-message-display').html(`<h4>${user.email} successfully updated prescription:</h4>`)
 }
 
 const onIndexDrugsError = function (error) {

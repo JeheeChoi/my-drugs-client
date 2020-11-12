@@ -29,13 +29,13 @@ const indexDrugs = function (event) {
 const hrefCreate = function (event) {
   event.preventDefault()
   $('#status-message-display').html('<h4>Add/Remove Prescriptions Here:</h4>')
-  $('#index-page').show()
   $('#create-page').show()
   $('#add-drugs-button-div').show()
   $('#remove-drugs-button-div').show()
 
   // $('#add').hide()
   // $('#update').show()
+  $('#index-page').hide()
   $('#add').hide()
   $('#remove').hide()
   $('#update-page').hide()
