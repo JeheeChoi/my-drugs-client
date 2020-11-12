@@ -51,15 +51,13 @@ const hrefAdd = function (event) {
   event.preventDefault()
   $('#add').show()
   $('#remove').hide()
-  $('#edit').hide()
-  $('.edit').hide()
+  $('#update').hide()
 }
 const hrefRemove = function (event) {
   event.preventDefault()
   $('#remove').show()
   $('#add').hide()
-  $('#edit').hide()
-  $('.edit').hide()
+  $('#update').hide()
 }
 // CREATE NEW PRESCRIPTIONS - on submit add prescription formData
 const createDrugs = function (event) {
@@ -94,7 +92,7 @@ const hrefUpdate = function (event) {
   $('#add-drugs-button-div').hide()
   $('#remove-drugs-button-div').hide()
 
-  $('#edit').hide()
+  $('#update').hide()
   // const user = store.user
   // $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
   api.hrefUpdate()
@@ -105,7 +103,7 @@ const hrefUpdate = function (event) {
 // UPDATE Prescription loading PAGE
 const hrefEdit = function (event) {
   event.preventDefault()
-  $('#edit').show()
+  $('#update').show()
 }
 
 const updateDrugs = function (event) {

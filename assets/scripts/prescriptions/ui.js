@@ -45,9 +45,10 @@ const onCreateDrugsSuccess = function (res) {
 }
 
 const onDeleteDrugsSuccess = function (res) {
-  $('#index-page').show()
+  // $('#index-page').show()
   // $('#add-drugs-button-div').hide()
   $('#remove-drugs').trigger('reset')
+  $('#status-message-display').html('<h4>successfully deleted prescription</h4>')
 }
 // Create prescription landing page
 const onHrefCreateSuccess = function (res) {
@@ -115,10 +116,9 @@ const onHrefUpdateSuccess = function (res) {
 }
 
 const onUpdateDrugsSuccess = function (res) {
-  const user = store.user
   $('#update-drugs').trigger('reset')
 
-  $('#status-message-display').html(`<h4>${user.email} successfully updated prescription:</h4>`)
+  $('#status-message-display').html('<h4>Successfully updated prescription</h4>')
 }
 
 const onIndexDrugsError = function (error) {
