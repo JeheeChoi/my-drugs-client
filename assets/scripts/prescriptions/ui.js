@@ -42,6 +42,31 @@ const onCreateDrugsSuccess = function (res) {
   // console.log('lastIndex', prescriptions.slice(-1))
   const user = store.user
   $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
+
+  const prescriptions = res.prescriptions
+  // RESET THE PRESCRIPTION INDEX PAGE SO IT DOESN'T ADD UP THE LIST OF DATA
+  $('#create-prescription-tb tbody').html('')
+
+  prescriptions.forEach(function (prescription) {
+    if ($('#create-prescription-tb tbody').length === 0) {
+      $('#create-prescription-tb').append('<tbody></tbody>')
+    }
+    // $('#prescription-tb tbody').append('<tr>' +
+    //       '<td>My First Video</td>' +
+    //       '<td>6/11/2015</td>' +
+    //       '<td>www.pluralsight.com</td>' +
+    //       '</tr>')\
+    const prescriptionHTML = (`
+      <tr class="card-header" id="headingOne">
+      <td></td>
+      <td>${prescription.name}</td>
+      <td>${prescription.description}</td>
+      <td>${prescription.dr}</td>
+      <td>${prescription._id}</td>
+      <tr>
+    `)
+    $('#create-prescription-tb tbody').append(prescriptionHTML)
+  })
 }
 
 const onDeleteDrugsSuccess = function (res) {
@@ -98,35 +123,35 @@ const onUpdateDrugsSuccess = function (res) {
 
 const onIndexDrugsError = function (error) {
   $('#message-display').text('Error Getting Prescription Code: ' + error.statusText)
-  console.log('error is:', error)
+  // console.log('error is:', error)
 }
 
 const onCreateDrugsError = function (error) {
   $('#message-display').text('Error Creating Prescription Code: ' + error.statusText)
-  console.log('error is:', error)
+  // console.log('error is:', error)
 }
 
 const onHrefCreateError = function (error) {
   $('#message-display').text('Error Loading Create Page Code: ' + error.statusText)
-  console.log('error is:', error)
+  // console.log('error is:', error)
 }
 const onDeleteDrugsError = function (error) {
   $('#message-display').text('Error Deleting Prescription Code: ' + error.statusText)
-  console.log('error is:', error)
+  // console.log('error is:', error)
 }
 
 const onHrefUpdateError = function (error) {
   $('#message-display').text('Error Loading Update Page Code: ' + error.statusText)
-  console.log('error is:', error)
+  // console.log('error is:', error)
 }
 
 const onUpdateDrugsError = function (error) {
   $('#message-display').text('Error Updating Prescription Code: ' + error.statusText)
-  console.log('error is:', error)
+  // console.log('error is:', error)
 }
 const onError = function (error) {
   $('#message-display').text('Error Code: ' + error.statusText)
-  console.log('error is:', error)
+  // console.log('error is:', error)
 }
 module.exports = {
   onIndexDrugsSuccess,

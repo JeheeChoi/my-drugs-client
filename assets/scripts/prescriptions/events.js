@@ -6,7 +6,7 @@ const ui = require('./ui')
 // const store = require('./../store')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
-console.log(ui)
+// console.log(ui)
 
 // VIEW ALL PRESCRIPTIONS THAT WERE CREATED PREVIOUSLY
 const indexDrugs = function (event) {
