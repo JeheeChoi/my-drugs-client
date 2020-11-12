@@ -40,6 +40,7 @@ Prescription attributes: drugName, description, orderBy(dr's name), date, refill
 
 
 One to many relationship: a user to many prescriptions.
+![ERD1](https://i.imgur.com/ctfBUsw.png)
 https://imgur.com/a/NTsBb3s
 
 
