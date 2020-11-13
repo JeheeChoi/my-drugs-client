@@ -42,6 +42,7 @@ const onCreateDrugsSuccess = function (res) {
   // console.log('lastIndex', prescriptions.slice(-1))
   const user = store.user
   $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
+  $('#create-prescription-tb').html('')
 
   const prescription = res.prescription
 
@@ -89,6 +90,7 @@ const onHrefCreateSuccess = function (res) {
     //       '<td>6/11/2015</td>' +
     //       '<td>www.pluralsight.com</td>' +
     //       '</tr>')\
+
     const prescriptionHTML = (`
       <tr class="card-header" id="headingOne">
       <td></td>
