@@ -31,7 +31,6 @@ const hrefCreate = function (event) {
   $('#status-message-display').html('<h4>Add/Remove Prescriptions Here:</h4>')
   $('#create-page').show()
   $('#add-drugs-button-div').show()
-  $('#remove-drugs-button-div').show()
 
   // $('#add').hide()
   // $('#update').show()
@@ -90,7 +89,6 @@ const hrefUpdate = function (event) {
   $('#edit-drugs-button-div').show()
   $('#create-page').hide()
   $('#add-drugs-button-div').hide()
-  $('#remove-drugs-button-div').hide()
 
   $('#update').hide()
   // const user = store.user

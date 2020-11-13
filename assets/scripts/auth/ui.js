@@ -21,6 +21,8 @@ const onSignInSuccess = function (res) {
   $('#sign-out').show()
   $('#change-password').show()
   $('#prescription-page').show()
+  $('#status-message-display').show()
+
   $('#index-page').hide()
   $('#create-page').hide()
   $('#update-page').hide()

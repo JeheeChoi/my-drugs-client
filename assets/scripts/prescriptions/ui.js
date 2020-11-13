@@ -42,6 +42,18 @@ const onCreateDrugsSuccess = function (res) {
   // console.log('lastIndex', prescriptions.slice(-1))
   const user = store.user
   $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
+
+  const prescription = res.prescription
+
+  $('#create-prescription-tb').append(`
+    <tr class="card-header" id="headingOne">
+    <td></td>
+    <td>${prescription.name}</td>
+    <td>${prescription.description}</td>
+    <td>${prescription.dr}</td>
+    <td>${prescription._id}</td>
+    <tr>
+  `)
 }
 
 const onDeleteDrugsSuccess = function (res) {
@@ -49,6 +61,18 @@ const onDeleteDrugsSuccess = function (res) {
   // $('#add-drugs-button-div').hide()
   $('#remove-drugs').trigger('reset')
   $('#status-message-display').html('<h4>successfully deleted prescription</h4>')
+
+  // const prescription = res.prescription
+  //
+  // $('#create-prescription-tb').pop(`
+  //   <tr class="card-header" id="headingOne">
+  //   <td></td>
+  //   <td>${prescription.name}</td>
+  //   <td>${prescription.description}</td>
+  //   <td>${prescription.dr}</td>
+  //   <td>${prescription._id}</td>
+  //   <tr>
+  // `)
 }
 // Create prescription landing page
 const onHrefCreateSuccess = function (res) {

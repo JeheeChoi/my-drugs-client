@@ -22,6 +22,7 @@ $(() => {
   //
   // Prescription events
   $('#prescription-page').hide()
+  $('#status-message-display').hide()
   // My INDEX Prescription page
   $('#index-drugs').on('click', drugEvents.indexDrugs)
   // It goes to Add/Remov prescription page
