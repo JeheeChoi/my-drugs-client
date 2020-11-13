@@ -22,6 +22,7 @@ const onSignInSuccess = function (res) {
   $('#change-password').show()
   $('#prescription-page').show()
   $('#status-message-display').show()
+  $('#menu').show()
 
   $('#index-page').hide()
   $('#create-page').hide()
@@ -40,6 +41,7 @@ const onSignOutSuccess = function () {
   $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
+  $('#menu').hide()
 }
 
 const onChangePwSuccess = function () {

@@ -6,7 +6,7 @@ const api = require('./api')
 const onIndexDrugsSuccess = function (res) {
   const prescriptions = res.prescriptions
 
-  $('#status-message-display').html(`<h4>${prescriptions.length} prescriptions found:</h4>`)
+  $('#status-message-display').html(`<h4>You Have ${prescriptions.length} prescriptions</h4>`)
 
   // RESET THE PRESCRIPTION INDEX PAGE SO IT DOESN'T ADD UP THE LIST OF DATA
   $('#prescription-tb tbody').html('')
@@ -32,44 +32,6 @@ const onIndexDrugsSuccess = function (res) {
   })
 }
 
-// CREATE PRESCRIPTION PAGE - JUST THE PAGE TO SHOW THE LIST & THE OPTION TO ADD
-const onCreateDrugsSuccess = function (res) {
-  $('#update').hide()
-  $('#index-page').hide()
-  $('#create').show()
-  $('#create-drugs').trigger('reset')
-
-  // const prescriptions = res.prescriptions
-  // console.log('lastIndex', prescriptions.slice(-1))
-  const user = store.user
-  $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
-
-  api.hrefCreate()
-    .then(onHrefCreateSuccess)
-    .catch(onHrefCreateError)
-}
-
-const onDeleteDrugsSuccess = function (res) {
-  // $('#index-page').show()
-  // $('#add-drugs-button-div').hide()
-  $('#remove-drugs').trigger('reset')
-  $('#status-message-display').html('<h4>successfully deleted prescription</h4>')
-
-  // const prescription = res.prescription
-  //
-  // $('#create-prescription-tb').pop(`
-  //   <tr class="card-header" id="headingOne">
-  //   <td></td>
-  //   <td>${prescription.name}</td>
-  //   <td>${prescription.description}</td>
-  //   <td>${prescription.dr}</td>
-  //   <td>${prescription._id}</td>
-  //   <tr>
-  // `)
-  api.hrefCreate()
-    .then(onHrefCreateSuccess)
-    .catch(onHrefCreateError)
-}
 // Create prescription landing page
 const onHrefCreateSuccess = function (res) {
   const prescriptions = res.prescriptions
@@ -100,32 +62,71 @@ const onHrefCreateSuccess = function (res) {
   })
 }
 
+// CREATE PRESCRIPTION PAGE - JUST THE PAGE TO SHOW THE LIST & THE OPTION TO ADD
+const onCreateDrugsSuccess = function (res) {
+  $('#update').hide()
+  $('#index-page').hide()
+  $('#create').show()
+  $('#create-drugs').trigger('reset')
+
+  // const prescriptions = res.prescriptions
+  // console.log('lastIndex', prescriptions.slice(-1))
+  const user = store.user
+  $('#status-message-display').html(`<h4>${user.email} successfully add a new prescription:</h4>`)
+
+  api.hrefCreate()
+    .then(onHrefCreateSuccess)
+    .catch(onHrefCreateError)
+}
+
+const onDeleteDrugsSuccess = function (res) {
+  // $('#index-page').show()
+  // $('#add-drugs-button-div').hide()
+  $('#remove-drugs').trigger('reset')
+  $('#status-message-display').html('<h4>successfully deleted prescription</h4>')
+
+  // const prescription = res.prescription
+  //
+  // $('#create-prescription-tb').pop(`
+  //   <tr class="card-header" id="headingOne">
+  //   <td></td>
+  //   <td>${prescription.name}</td>
+  //   <td>${prescription.description}</td>
+  //   <td>${prescription.dr}</td>
+  //   <td>${prescription._id}</td>
+  //   <tr>
+  // `)
+  api.hrefCreate()
+    .then(onHrefCreateSuccess)
+    .catch(onHrefCreateError)
+}
+
 // UPDATE && INDEX Prescriptions
-// const onHrefUpdateSuccess = function (res) {
-// const user = store.user
-// const prescriptions = res.prescriptions
-// $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
-//
-// $('#update-prescription-tb tbody').html('')
-//
-// prescriptions.forEach(function (prescription) {
-//   if ($('#update-prescription-tb tbody').length === 0) {
-//     $('#update-prescription-tb').append('<tbody></tbody>')
-//   }
-//   const prescriptionHTML = (`
-//     <tr>
-//     <td></td>
-//     <td>${prescription.name}</td>
-//     <td>${prescription.description}</td>
-//     <td>${prescription.dr}</td>
-//     <td>${prescription._id}</td>
-//     <tr>
-//   `)
-//   $('#update-prescription-tb tbody').append(prescriptionHTML)
-// })
-// <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-//     <div class="card card-body" id="update">
-//       <form id="edit-drugs">
+const onHrefUpdateSuccess = function (res) {
+  $('#status-message-display').html('<h4>Update Your Prescriptions Here</h4>')
+
+  const prescriptions = res.prescriptions
+
+  $('#update-prescription-tb tbody').html('')
+
+  prescriptions.forEach(function (prescription) {
+    if ($('#update-prescription-tb tbody').length === 0) {
+      $('#update-prescription-tb').append('<tbody></tbody>')
+    }
+    const prescriptionHTML = (`
+      <tr>
+      <td></td>
+      <td>${prescription.name}</td>
+      <td>${prescription.description}</td>
+      <td>${prescription.dr}</td>
+      <td>${prescription._id}</td>
+      <tr>
+      `)
+    $('#update-prescription-tb tbody').append(prescriptionHTML)
+  })
+//     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+//       <div class="card card-body" id="update">
+//         <form id="edit-drugs">
 //       <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
 //       <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
 //       <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
@@ -135,12 +136,15 @@ const onHrefCreateSuccess = function (res) {
 //     </div>
 //   </div>
 // </div>
-// }
+}
 
 const onUpdateDrugsSuccess = function (res) {
   $('#update-drugs').trigger('reset')
-
   $('#status-message-display').html('<h4>Successfully updated prescription</h4>')
+
+  api.hrefUpdate()
+    .then(onHrefUpdateSuccess)
+    .catch(onHrefUpdateError)
 }
 
 const onIndexDrugsError = function (error) {
@@ -179,6 +183,7 @@ module.exports = {
   onIndexDrugsSuccess,
   onCreateDrugsSuccess,
   onDeleteDrugsSuccess,
+  onHrefUpdateSuccess,
   onUpdateDrugsSuccess,
   onHrefCreateSuccess,
   onDeleteDrugsError,

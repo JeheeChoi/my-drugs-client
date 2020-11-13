@@ -28,7 +28,7 @@ const indexDrugs = function (event) {
 // href ADD/REMOVE PAGE LOADING
 const hrefCreate = function (event) {
   event.preventDefault()
-  $('#status-message-display').html('<h4>Add/Remove Prescriptions Here:</h4>')
+  $('#status-message-display').html('<h4>Add/Remove Prescriptions Here</h4>')
   $('#create-page').show()
   $('#add-drugs-button-div').show()
 
@@ -92,10 +92,10 @@ const hrefUpdate = function (event) {
 
   $('#update').hide()
   // const user = store.user
-  // $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
-  api.hrefCreate()
-    .then(ui.onHrefCreateSuccess)
-    .catch(ui.onHrefCreateError)
+
+  api.hrefUpdate()
+    .then(ui.onHrefUpdateSuccess)
+    .catch(ui.onHrefUpdateError)
 }
 
 // UPDATE Prescription loading PAGE

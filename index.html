@@ -21,7 +21,7 @@
         </div>
         <div class="row 2">
           <div class="col-6" id="message-display"></div>
-          <div class="col-6 btn-group btn-group-toggle">
+          <div class="col-6 btn-group btn-group-toggle" id="menu">
             <button type="button" class="btn btn-outline-secondary" name="options" id="index-drugs">My Prescriptions</button>
             <button type="button" class="btn btn-outline-secondary dropdown-toggle" name="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="manage-drugs"> Manage Prescriptions</button>
           <div class="dropdown-menu dropdown-menu-right">
@@ -111,18 +111,18 @@
                 <div class="card card-body" id="add">
                   <form id="create-drugs">
                 <!-- <h3>ADD New Prescription</h3> -->
-                  <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
+                  <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder="ex) Advil(Ibuprofen,200mg)" /></label>
                   <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
-                  <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
+                  <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder="ex) McBride,MD" /></label>
                   <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
                   </form>
                 </div>
                 <div class="card card-body" id="remove">
                   <form id="remove-drugs">
                 <!-- <h3>ADD New Prescription</h3> -->
-                  Type your prescription ID# here:
-                  <label for="drug-id"><input required type="text" class="form-control" name="prescription[_id]" placeholder ="ex) 432865332BEF" /></label><br>
-                  To confirm you want to remove the prescription
+                  Put Prescription ID#:
+                  <label for="drug-id"><input required type="text" class="form-control" name="prescription[_id]" placeholder="Here" /></label>
+                   To Remove The Prescription
                   <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
                   </form>
                 </div>
@@ -154,7 +154,7 @@
                     <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
                     <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
                     <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
-                    <label for="drug-id">Prescription ID#:<input required type="text" class="form-control" name="prescription[_id]" placeholder ="ex) 434529876c2e1" /></label>
+                    <label for="drug-id">Prescription ID#:<input required type="text" class="form-control" name="prescription[_id]" /></label>
                     <input type="submit" class="btn btn-outline-secondary" value="Confirm" />
                   </form>
                 </div>
