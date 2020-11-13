@@ -93,9 +93,9 @@ const hrefUpdate = function (event) {
   $('#update').hide()
   // const user = store.user
   // $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
-  api.hrefUpdate()
-    .then(ui.onHrefUpdateSuccess)
-    .catch(ui.onHrefUpdateError)
+  api.hrefCreate()
+    .then(ui.onHrefCreateSuccess)
+    .catch(ui.onHrefCreateError)
 }
 
 // UPDATE Prescription loading PAGE

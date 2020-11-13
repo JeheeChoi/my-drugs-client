@@ -1,4 +1,5 @@
 const store = require('./../store')
+const api = require('./api')
 
 // GET
 // VIEW ALL THE PRESCRIPTIONS
@@ -42,19 +43,10 @@ const onCreateDrugsSuccess = function (res) {
   // console.log('lastIndex', prescriptions.slice(-1))
   const user = store.user
   $('#status-message-display').html(`<h4>${user.email} successfully created a new prescription:</h4>`)
-  $('#create-prescription-tb').html('')
 
-  const prescription = res.prescription
-
-  $('#create-prescription-tb').append(`
-    <tr class="card-header" id="headingOne">
-    <td></td>
-    <td>${prescription.name}</td>
-    <td>${prescription.description}</td>
-    <td>${prescription.dr}</td>
-    <td>${prescription._id}</td>
-    <tr>
-  `)
+  api.hrefCreate()
+    .then(onHrefCreateSuccess)
+    .catch(onHrefCreateError)
 }
 
 const onDeleteDrugsSuccess = function (res) {
@@ -74,11 +66,15 @@ const onDeleteDrugsSuccess = function (res) {
   //   <td>${prescription._id}</td>
   //   <tr>
   // `)
+  api.hrefCreate()
+    .then(onHrefCreateSuccess)
+    .catch(onHrefCreateError)
 }
 // Create prescription landing page
 const onHrefCreateSuccess = function (res) {
   const prescriptions = res.prescriptions
   // RESET THE PRESCRIPTION INDEX PAGE SO IT DOESN'T ADD UP THE LIST OF DATA
+
   $('#create-prescription-tb tbody').html('')
 
   prescriptions.forEach(function (prescription) {
@@ -105,41 +101,41 @@ const onHrefCreateSuccess = function (res) {
 }
 
 // UPDATE && INDEX Prescriptions
-const onHrefUpdateSuccess = function (res) {
-  // const user = store.user
-  const prescriptions = res.prescriptions
-  $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
-
-  $('#update-prescription-tb tbody').html('')
-
-  prescriptions.forEach(function (prescription) {
-    if ($('#update-prescription-tb tbody').length === 0) {
-      $('#update-prescription-tb').append('<tbody></tbody>')
-    }
-    const prescriptionHTML = (`
-      <tr>
-      <td></td>
-      <td>${prescription.name}</td>
-      <td>${prescription.description}</td>
-      <td>${prescription.dr}</td>
-      <td>${prescription._id}</td>
-      <tr>
-    `)
-    $('#update-prescription-tb tbody').append(prescriptionHTML)
-  })
-  // <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-  //     <div class="card card-body" id="update">
-  //       <form id="edit-drugs">
-  //       <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
-  //       <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
-  //       <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
-  //       <label for="drug-id">Prescription ID#:<input required type="text" class="form-control" name="prescription[_id]" placeholder ="ex) 434529876c2e1" /></label>
-  //       <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
-  //       </form>
-  //     </div>
-  //   </div>
-  // </div>
-}
+// const onHrefUpdateSuccess = function (res) {
+// const user = store.user
+// const prescriptions = res.prescriptions
+// $('#status-message-display').html('<h4>Update Your Prescriptions Here:</h4>')
+//
+// $('#update-prescription-tb tbody').html('')
+//
+// prescriptions.forEach(function (prescription) {
+//   if ($('#update-prescription-tb tbody').length === 0) {
+//     $('#update-prescription-tb').append('<tbody></tbody>')
+//   }
+//   const prescriptionHTML = (`
+//     <tr>
+//     <td></td>
+//     <td>${prescription.name}</td>
+//     <td>${prescription.description}</td>
+//     <td>${prescription.dr}</td>
+//     <td>${prescription._id}</td>
+//     <tr>
+//   `)
+//   $('#update-prescription-tb tbody').append(prescriptionHTML)
+// })
+// <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+//     <div class="card card-body" id="update">
+//       <form id="edit-drugs">
+//       <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
+//       <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
+//       <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
+//       <label for="drug-id">Prescription ID#:<input required type="text" class="form-control" name="prescription[_id]" placeholder ="ex) 434529876c2e1" /></label>
+//       <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
+//       </form>
+//     </div>
+//   </div>
+// </div>
+// }
 
 const onUpdateDrugsSuccess = function (res) {
   $('#update-drugs').trigger('reset')
@@ -184,7 +180,6 @@ module.exports = {
   onCreateDrugsSuccess,
   onDeleteDrugsSuccess,
   onUpdateDrugsSuccess,
-  onHrefUpdateSuccess,
   onHrefCreateSuccess,
   onDeleteDrugsError,
   onCreateDrugsError,
