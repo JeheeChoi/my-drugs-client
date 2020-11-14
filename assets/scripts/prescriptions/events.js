@@ -82,6 +82,7 @@ const deleteDrugs = function (event) {
 // UPDATE PAGE(Shows the list of prescriptons and the buttons for "edit")
 const hrefUpdate = function (event) {
   event.preventDefault()
+  $('#status-message-display').html('<h4>Update Prescriptions Here</h4>')
 
   $('#index-page').hide()
   $('#update-page').show()

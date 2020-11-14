@@ -36,7 +36,7 @@ const onSignOutSuccess = function () {
     <h5>User ${store.user.email} successfully signed out! </h5>
   `)
   $('#prescription-page').hide()
-  $('#status-message-display').html('')
+  $('#status-message-display').hide()
   $('#sign-up').show()
   $('#sign-in').show()
   $('#sign-out').hide()

@@ -102,7 +102,7 @@ const onDeleteDrugsSuccess = function (res) {
 
 // UPDATE && INDEX Prescriptions
 const onHrefUpdateSuccess = function (res) {
-  $('#status-message-display').html('<h4>Update Your Prescriptions Here</h4>')
+  // $('#status-message-display').html('<h4>Update Your Prescriptions Here</h4>')
 
   const prescriptions = res.prescriptions
 
