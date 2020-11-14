@@ -118,22 +118,11 @@ const onHrefUpdateSuccess = function (res) {
       <td>${prescription.name}</td>
       <td>${prescription.description}</td>
       <td>${prescription.dr}</td>
+      <td>${prescription._id}</td>
       <tr>
       `)
     $('#update-prescription-tb tbody').append(prescriptionHTML)
   })
-//     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-//       <div class="card card-body" id="update">
-//         <form id="edit-drugs">
-//       <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
-//       <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
-//       <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
-//       <label for="drug-id">Prescription ID#:<input required type="text" class="form-control" name="prescription[_id]" placeholder ="ex) 434529876c2e1" /></label>
-//       <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
-//       </form>
-//     </div>
-//   </div>
-// </div>
 }
 
 const onUpdateDrugsSuccess = function (res) {
