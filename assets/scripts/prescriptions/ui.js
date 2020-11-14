@@ -1,4 +1,4 @@
-const store = require('./../store')
+// const store = require('./../store')
 const api = require('./api')
 
 // GET
@@ -71,8 +71,7 @@ const onCreateDrugsSuccess = function (res) {
 
   // const prescriptions = res.prescriptions
   // console.log('lastIndex', prescriptions.slice(-1))
-  const user = store.user
-  $('#status-message-display').html(`<h4>${user.email} successfully add a new prescription:</h4>`)
+  $('#status-message-display').html('<h4>Successfully added a new prescription:</h4>')
 
   api.hrefCreate()
     .then(onHrefCreateSuccess)
@@ -119,7 +118,6 @@ const onHrefUpdateSuccess = function (res) {
       <td>${prescription.name}</td>
       <td>${prescription.description}</td>
       <td>${prescription.dr}</td>
-      <td>${prescription._id}</td>
       <tr>
       `)
     $('#update-prescription-tb tbody').append(prescriptionHTML)
