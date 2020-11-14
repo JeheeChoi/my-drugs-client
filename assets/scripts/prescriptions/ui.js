@@ -153,6 +153,8 @@ const onIndexDrugsError = function (error) {
 }
 
 const onCreateDrugsError = function (error) {
+  $('#create-drugs').trigger('reset')
+
   $('#message-display').text('Error Creating Prescription Code: ' + error.statusText)
   // console.log('error is:', error)
 }
@@ -162,6 +164,8 @@ const onHrefCreateError = function (error) {
   // console.log('error is:', error)
 }
 const onDeleteDrugsError = function (error) {
+  $('#remove-drugs').trigger('reset')
+
   $('#message-display').text('Error Deleting Prescription Code: ' + error.statusText)
   // console.log('error is:', error)
 }
@@ -172,6 +176,8 @@ const onHrefUpdateError = function (error) {
 }
 
 const onUpdateDrugsError = function (error) {
+  $('#update-drugs').trigger('reset')
+
   $('#message-display').text('Error Updating Prescription Code: ' + error.statusText)
   // console.log('error is:', error)
 }
