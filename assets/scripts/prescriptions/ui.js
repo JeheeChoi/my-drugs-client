@@ -113,7 +113,7 @@ const onHrefUpdateSuccess = function (res) {
       $('#update-prescription-tb').append('<tbody></tbody>')
     }
     const prescriptionHTML = (`
-      <tr>
+      <tr class="card-header" id="headingOne">
       <td></td>
       <td>${prescription.name}</td>
       <td>${prescription.description}</td>

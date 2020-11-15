@@ -20,13 +20,15 @@ const onSignInSuccess = function (res) {
   $('#sign-in').trigger('reset')
   $('#sign-out').show()
   $('#change-password').show()
-  $('#prescription-page').show()
-  $('#status-message-display').show()
-  $('#menu').show()
 
-  $('#index-page').hide()
-  $('#create-page').hide()
-  $('#update-page').hide()
+  $('#status-message-display').html('')
+  $('#status-message-display').show()
+
+  $('#menu').show()
+  // $('#prescription-page').hide()
+  // $('#index-page').hide()
+  // $('#create-page').hide()
+  // $('#update-page').hide()
   $('#sign-up').hide()
   $('#sign-in').hide()
 }
@@ -36,12 +38,18 @@ const onSignOutSuccess = function () {
     <h5>User ${store.user.email} successfully signed out! </h5>
   `)
   $('#prescription-page').hide()
+  // $('#index-page').hide()
+  // $('#create-page').hide()
+  // $('#update-page').hide()
   $('#status-message-display').hide()
   $('#sign-up').show()
   $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#menu').hide()
+  $('#prescription-tb tbody').html('')
+  $('#create-prescription-tb tbody').html('')
+  $('#update-prescription-tb tbody').html('')
 }
 
 const onChangePwSuccess = function () {

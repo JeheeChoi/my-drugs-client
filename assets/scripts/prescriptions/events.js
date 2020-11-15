@@ -12,6 +12,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const indexDrugs = function (event) {
   // console.log(event)
   event.preventDefault()
+  $('#prescription-page').show()
 
   $('#index-page').show()
   $('#create-page').hide()
@@ -29,6 +30,8 @@ const indexDrugs = function (event) {
 const hrefCreate = function (event) {
   event.preventDefault()
   $('#status-message-display').html('<h4>Add/Remove Prescriptions Here</h4>')
+
+  $('#prescription-page').show()
   $('#create-page').show()
   $('#add-drugs-button-div').show()
 
@@ -84,6 +87,7 @@ const hrefUpdate = function (event) {
   event.preventDefault()
   $('#status-message-display').html('<h4>Update Prescriptions Here</h4>')
 
+  $('#prescription-page').show()
   $('#index-page').hide()
   $('#update-page').show()
 
