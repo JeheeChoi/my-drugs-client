@@ -1,5 +1,5 @@
 
-# Full Stack Project - MyDrugs (Back End)
+# Full Stack Project - MyDrugs (Front End)
 
 *This is a student project*
 
