@@ -66,6 +66,7 @@ const onSignUpError = function (error) {
   $('#message-display').text('Error Signing Up Code: ' + error.statusText)
   // console.log('error is:', error)
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
 }
 
 const onSignInError = function (error) {
