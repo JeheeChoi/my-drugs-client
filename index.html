@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+      <title>MyDrugs</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="container">
+        <div class="row 1">
+          <div class="col-sm-8"></div>
+          <div class="col-sm-4"><h1>MyDrugs</h1></div>
+        </div>
+        <div class="row 2">
+          <div class="col-6" id="message-display"></div>
+          <div class="col-6 btn-group btn-group-toggle" id="menu">
+            <button type="button" class="btn btn-outline-secondary" name="options" id="index-drugs">My Prescriptions</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" name="options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="manage-drugs"> Manage Prescriptions</button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#add/remove" role="button" aria-controls="add" id="add-button">Add/Remove Prescriptions</a>
+            <a class="dropdown-item" href="#update" role="button" aria-controls="update" id="update-button">Update Prescriptions</a>
+
+          </div>
+          </div>
+        </div>
+        <div class="row 3" id="main">
+          <div class="col-sm-3" id="auth">
+
+            <form id="sign-up">
+              <h3>Sign Up</h3>
+              <input required type="text" class="form-control" name="credentials[email]" placeholder ="Email address" />
+              <input required type="password" class="form-control" name="credentials[password]" placeholder="Password" />
+              <input required type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm password" />
+              <input type="Submit" class="btn btn-outline-secondary" value="REGISTER" />
+            </form>
+            <br>
+            <form id="sign-in">
+              <h3>Sign In</h3>
+              <input required type="text" class="form-control" name="credentials[email]" placeholder ="Email address" />
+              <input required type="password" class="form-control" name="credentials[password]" placeholder="Password"/>
+              <input type="Submit" class="btn btn-outline-secondary" value="SIGN IN" />
+            </form>
+            <br>
+            <form id="sign-out">
+              <h3>Sign Out</h3>
+              <input type="Submit" class="btn btn-outline-secondary" value="SIGN OUT" />
+            </form>
+            <br>
+            <form id="change-password">
+              <h3>Change PW</h3>
+              <input required type="password" class="form-control" name="passwords[old]" placeholder="Original password"/>
+              <input required type="password" class="form-control" name="passwords[new]" placeholder="New password" />
+              <input type="Submit" class="btn btn-outline-secondary" value="SUBMIT" />
+            </form>
+          </div>
+
+          <div class="col-sm-9" id="main-page">
+            <div id="status-message-display"></div>
+            <div id="prescription-page">
+
+              <div id="index-page">
+                <div class="index-table" id="index-table">
+                  <table class="table table-hover" id="prescription-tb">
+                    <thead>
+                      <!--<tbody>
+
+                        </tbody> -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">NAME</th>
+                          <th scope="col">DESCRIPTION</th>
+                          <th scope="col">DR</th>
+                          <!-- <th scope="col">PRESCRIPTION ID#</th> -->
+                          <!-- <th scope="col"></th> -->
+                        </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+
+              <div id="create-page">
+                <div class="index-table" id="create-index-table">
+                  <table class="table table-hover" id="create-prescription-tb">
+                    <thead>
+                      <!--<tbody>
+
+                        </tbody> -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">NAME</th>
+                          <th scope="col">DESCRIPTION</th>
+                          <th scope="col">DR</th>
+                          <th scope="col">PRESCRIPTION ID#</th>
+                        </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="btn-group btn-group-toggle" id="add-drugs-button-div">
+                  <input type="Submit" class="btn btn-outline-secondary" value="Add New Prescription" id="add-new-button"/>
+                  <input type="Submit" class="btn btn-outline-secondary" value="Remove Prescription" id="remove-button"/>
+                </div>
+
+                <div class="card card-body" id="add">
+                  <form id="create-drugs">
+                <!-- <h3>ADD New Prescription</h3> -->
+                  <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder="ex) Advil(Ibuprofen,200mg)" /></label>
+                  <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
+                  <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder="ex) McBride,MD" /></label>
+                  <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
+                  </form>
+                </div>
+                <div class="card card-body" id="remove">
+                  <form id="remove-drugs">
+                <!-- <h3>ADD New Prescription</h3> -->
+                  Put Prescription ID#:
+                  <label for="drug-id"><input required type="text" class="form-control" name="prescription[_id]" placeholder="Here" /></label>
+                   To Remove The Prescription
+                  <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
+                  </form>
+                </div>
+              </div>
+
+              <div id="update-page">
+                <div class="index-table" id="update-index-table">
+                  <table class="table table-hover" id="update-prescription-tb">
+                    <thead>
+                      <!--<tbody>
+
+                        </tbody> -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">NAME</th>
+                          <th scope="col">DESCRIPTION</th>
+                          <th scope="col">DR</th>
+                          <th scope="col">PRESCRIPTION ID#</th>
+                        </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div id="edit-drugs-button-div">
+                  <input type="Submit" class="btn btn-outline-secondary" value="update Prescription" id="edit-button"/>
+                </div>
+                <div class="card card-body" id="update">
+                  <h4>Update Prescription to:</h4>
+                  <form id="update-drugs">
+                    <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
+                    <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
+                    <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
+                    <label for="drug-id">Prescription ID#:<input required type="text" class="form-control" name="prescription[_id]" /></label>
+                    <input type="submit" class="btn btn-outline-secondary" value="Confirm" />
+                  </form>
+                </div>
+              </div>
+
+
+
+                    <!-- </div>
+                  </div>
+                </div> -->
+                <!-- <div class="card card-body" id="update">
+                  <form id="edit-drugs">
+                  <label for="drug-name">Medication Name:<input required type="text" class="form-control" name="prescription[name]" placeholder ="ex) Advil(Ibuprofen,200mg)" /></label>
+                  <label for="drug-description">Description:<input required type="text" class="form-control" name="prescription[description]" placeholder ="ex) Painkiller" /></label>
+                  <label for="dr-name">Dr's Name:<input required type="text" class="form-control" name="prescription[dr]" placeholder ="ex) McBride,MD" /></label>
+                  <label for="drug-id">Prescription ID#:<input required type="text" class="form-control" name="prescription[_id]" placeholder ="ex) 434529876c2e1" /></label>
+                  <input type="Submit" class="btn btn-outline-secondary" value="Confirm" />
+                  </form>
+                </div> -->
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <h3>My Prescriptions</h3>
+      <a class="btn btn-outline-secondary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Add A New Prescription</a>
+
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+              Add your prescription here.
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </body>
+</html>
