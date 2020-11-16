@@ -8,6 +8,7 @@ const onSignUpSuccess = function (res) {
     ${user.email} successfully signed up!</h5>
   `)
   $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
 }
 
 const onSignInSuccess = function (res) {
@@ -20,6 +21,7 @@ const onSignInSuccess = function (res) {
   $('#sign-in').trigger('reset')
   $('#sign-out').show()
   $('#change-password').show()
+  $('#change-password').trigger('reset')
 
   $('#status-message-display').html('')
   $('#status-message-display').show()
@@ -43,7 +45,10 @@ const onSignOutSuccess = function () {
   // $('#update-page').hide()
   $('#status-message-display').hide()
   $('#sign-up').show()
+  $('#sign-up').trigger('reset')
   $('#sign-in').show()
+  $('#sign-in').trigger('reset')
+
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#menu').hide()
