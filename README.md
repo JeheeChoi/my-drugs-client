@@ -53,7 +53,7 @@ During the project my schedule's got adjusted as:
 - User can create(add) a record of a prescription
 - User can see all the prescriptions that are stored
 - User can update the prescriptions(log side effects, likes/dislikes)
-- User can delete(archieve) the prescriptions
+- User can delete(archive) the prescriptions
 
 ### Resources
 
